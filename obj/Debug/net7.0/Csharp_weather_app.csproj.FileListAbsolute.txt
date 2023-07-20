@@ -1,0 +1,17 @@
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/bin/Debug/net7.0/Csharp_weather_app
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/bin/Debug/net7.0/Csharp_weather_app.deps.json
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/bin/Debug/net7.0/Csharp_weather_app.runtimeconfig.json
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/bin/Debug/net7.0/Csharp_weather_app.dll
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/bin/Debug/net7.0/Csharp_weather_app.pdb
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.csproj.AssemblyReference.cache
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.GeneratedMSBuildEditorConfig.editorconfig
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.AssemblyInfoInputs.cache
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.AssemblyInfo.cs
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.csproj.CoreCompileInputs.cache
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.dll
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/refint/Csharp_weather_app.dll
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.pdb
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.genruntimeconfig.cache
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/ref/Csharp_weather_app.dll
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/keremsmacbook/Desktop/gitHub/C#_learning/Csharp_weather_app/Csharp_weather_app/obj/Debug/net7.0/Csharp_weather_app.csproj.CopyComplete
