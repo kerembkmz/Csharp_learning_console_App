@@ -19,7 +19,7 @@ HttpClient client = new HttpClient();
 async Task<string> getWeatherAPIUsingHTTPClient(string location)
 {
     using var client = new HttpClient();
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_Keys.GetWeatherAPIKey();
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
     var response = await client.GetAsync(url);
     return await response.Content.ReadAsStringAsync();
 }
@@ -67,11 +67,16 @@ while (CityInput != "q")
     Console.WriteLine("Humidity: " + weatherData.main.humidity);
     Console.WriteLine("Wind Speed: " + weatherData.wind.speed);
 
+    DB_Conn dbConn = new DB_Conn();
+
+
 }
+
+
 
 string getWeatherAPI(string location)
 {
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_Keys.GetWeatherAPIKey();
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
     var request = WebRequest.Create(url);
     request.Method = "GET";
 
