@@ -19,7 +19,9 @@ HttpClient client = new HttpClient();
 async Task<string> getWeatherAPIUsingHTTPClient(string location)
 {
     using var client = new HttpClient();
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
+    //var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
+    //var url = "https://c49f93e3-f002-4bff-9e67-175b36c66809.mock.pstmn.io" + "?q" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
+    var url = "https://42a4ae73-9598-47c4-9e27-ac0791695b0b.mock.pstmn.io" + "?q" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
     var response = await client.GetAsync(url);
     return await response.Content.ReadAsStringAsync();
 }
@@ -82,6 +84,7 @@ while (CityInput != "q" || choice != "q")
                                                                                    //Making deserializing to a dynamic type so that it is easier to read & grasp the code.
                                                                                    //Also solves the non-nullable run.
 
+                Console.WriteLine("Server: " + weatherData.weather[0].server);
                 Console.WriteLine("Description: " + weatherData.weather[0].description);
                 Console.WriteLine("Temperature: " + (weatherData.main.temp - 273.15));
                 Console.WriteLine("Location: " + weatherData.name);
@@ -156,7 +159,7 @@ while (CityInput != "q" || choice != "q")
 
 string getWeatherAPI(string location)
 {
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
+    var url = "https://54c42091-68dc-4c8e-8c04-057eb70dbb5a.mock.pstmn.io" + "?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey(); ;
     var request = WebRequest.Create(url);
     request.Method = "GET";
 

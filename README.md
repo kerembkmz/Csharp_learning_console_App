@@ -11,6 +11,7 @@ The C# Weather App is a console application that allows users to retrieve weathe
 3. Basic log-in, sign-up.
 4. All of the keys&sensetive attributes are defined in private so that they are secure.
 5. Uses dynamic deserialization using the Newtonsoft.Json NuGet Package.
+6. Established a mock_server using Postman for testing & developing.
 
 ### The C# Weather App uses the following external libraries: 
 
