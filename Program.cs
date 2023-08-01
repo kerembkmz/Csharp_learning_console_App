@@ -8,20 +8,31 @@ using System.Threading.Tasks;
 //Request Library.
 using System.Net;
 using System.IO;
-using Csharp_weather_app// Note: actual namespace depends on the project name.
-;
+using Csharp_weather_app;// Note: actual namespace depends on the project name.
+
+using System.Net.Http;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
+
 
 
 //This way, HttpClient is instantiated once per application, rather than per-use
 //So it is more efficient on paper.
-HttpClient client = new HttpClient();
+
+
+HttpClientHandler handler = new HttpClientHandler()
+{
+    ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true
+};
+
+HttpClient client = new HttpClient(handler);
 
 async Task<string> getWeatherAPIUsingHTTPClient(string location)
 {
-    using var client = new HttpClient();
     //var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
     //var url = "https://c49f93e3-f002-4bff-9e67-175b36c66809.mock.pstmn.io" + "?q" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
-    var url = "https://42a4ae73-9598-47c4-9e27-ac0791695b0b.mock.pstmn.io" + "?q" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
+    //var url = "https://42a4ae73-9598-47c4-9e27-ac0791695b0b.mock.pstmn.io" + "?q" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
+    var url = "http://localhost/api/openWeatherAPI/" + location;
     var response = await client.GetAsync(url);
     return await response.Content.ReadAsStringAsync();
 }
@@ -65,7 +76,7 @@ while (CityInput != "q" || choice != "q")
                 //Stopwatch stopwatch2 = new Stopwatch();
 
                 //stopwatch1.Start();
-                //string jsonObj2 = await getWeatherAPIUsingHTTPClient(CityInput);
+                string jsonObj = await getWeatherAPIUsingHTTPClient(CityInput);
                 //Console.WriteLine(jsonObj2);
                 //stopwatch1.Stop();
 
@@ -73,8 +84,8 @@ while (CityInput != "q" || choice != "q")
 
 
                 //stopwatch2.Start();
-                string jsonObj = getWeatherAPI(CityInput);
-                //Console.WriteLine(jsonObj);
+                //string jsonObj = getWeatherAPI(CityInput);
+                Console.WriteLine(jsonObj);
                 //stopwatch2.Stop();
 
                 //Console.WriteLine("Time using webRequest: " + stopwatch2.ElapsedMilliseconds);
@@ -128,7 +139,7 @@ while (CityInput != "q" || choice != "q")
 
 
             //stopwatch2.Start();
-            string jsonObj = getWeatherAPI(CityInput);
+            string jsonObj = await getWeatherAPIUsingHTTPClient(CityInput);
             //Console.WriteLine(jsonObj);
             //stopwatch2.Stop();
 
@@ -156,21 +167,23 @@ while (CityInput != "q" || choice != "q")
 }
 
 
+//string getWeatherAPI(string location)
+//{
 
-string getWeatherAPI(string location)
-{
-    var url = "https://54c42091-68dc-4c8e-8c04-057eb70dbb5a.mock.pstmn.io" + "?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey(); ;
-    var request = WebRequest.Create(url);
-    request.Method = "GET";
+    //var url = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey();
+    //var url = "http://localhost:5135/api/openWeatherAPI/" + location; 
+    //var url = "https://54c42091-68dc-4c8e-8c04-057eb70dbb5a.mock.pstmn.io" + "?q=" + location + "&appid=" + All_Keys.GetWeatherAPIKey(); ;
+    //var request = WebRequest.Create(url);
+    //request.Method = "GET";
 
-    using var webResponse = request.GetResponse();
-    using var webStream = webResponse.GetResponseStream();
+ //   using var webResponse = request.GetResponse();
+   // using var webStream = webResponse.GetResponseStream();
 
-    using var reader = new StreamReader(webStream);
-    var data = reader.ReadToEnd();
+//    using var reader = new StreamReader(webStream);
+  //  var data = reader.ReadToEnd();
 
 
-    return data;
+    //return data;
 
-}
+//}
 
