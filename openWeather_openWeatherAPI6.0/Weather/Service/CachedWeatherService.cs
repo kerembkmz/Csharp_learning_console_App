@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
+using openWeather_openWeatherAPI6._0.Weather.Service.ServiceAbstracts;
 
 namespace openWeather_openWeatherAPI6._0.Weather.Service
 {
@@ -33,11 +34,7 @@ namespace openWeather_openWeatherAPI6._0.Weather.Service
 			{
 				
                 string getWeatherInfoViaLocationUrl = $"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={_apiKey}";
-                var httpClient = _httpClientFactory.CreateClient();
-                var response = await httpClient.GetAsync(getWeatherInfoViaLocationUrl);
-                response.EnsureSuccessStatusCode();
-                var content = await response.Content.ReadAsStringAsync();
-                var weatherData = JsonConvert.DeserializeObject<WeatherResponse>(content);
+                var weatherData = await GetWeatherDataHelper.GetWeatherData(_httpClientFactory, getWeatherInfoViaLocationUrl);
 
                 //https://learn.microsoft.com/en-us/dotnet/api/system.runtime.caching.memorycache.set?view=dotnet-plat-ext-7.0
                 //The _cache.Set's documentation is on the link above.

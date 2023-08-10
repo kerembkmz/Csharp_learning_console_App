@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
+using openWeather_openWeatherAPI6._0.Weather.Service.ServiceAbstracts;
 
 namespace openWeather_openWeatherAPI6._0.Weather.Service
 {
@@ -19,23 +20,9 @@ namespace openWeather_openWeatherAPI6._0.Weather.Service
 
         public async Task<WeatherResponse> GetWeather(string location)
         {
+            string getWeatherInfoViaLocationUrl = $"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={_apiKey}";
+            return await GetWeatherDataHelper.GetWeatherData(_httpClientFactory, getWeatherInfoViaLocationUrl);
 
-            try
-            {
-                string getWeatherInfoViaLocationUrl = $"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={_apiKey}";
-                var httpClient = _httpClientFactory.CreateClient();
-                var response = await httpClient.GetAsync(getWeatherInfoViaLocationUrl);
-                response.EnsureSuccessStatusCode();
-                var content = await response.Content.ReadAsStringAsync();
-                var weatherData = JsonConvert.DeserializeObject<WeatherResponse>(content);
-                return weatherData;
-
-            }
-            catch (HttpRequestException ex)
-            {
-                Console.WriteLine("Error fetching weather data, error:" + ex.Message);
-                throw;
-            }
         }
     }
 }

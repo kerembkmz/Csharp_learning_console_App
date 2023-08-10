@@ -16,9 +16,11 @@
   <ItemGroup>
     <None Remove="Weather\" />
     <None Remove="Weather\Service\" />
+    <None Remove="Weather\Service\ServiceAbstracts\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Weather\" />
     <Folder Include="Weather\Service\" />
+    <Folder Include="Weather\Service\ServiceAbstracts\" />
   </ItemGroup>
 </Project>
