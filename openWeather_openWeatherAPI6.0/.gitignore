@@ -30,5 +30,8 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
+#Keys.cs
+Keys.cs
+
 # Visual Studio 2015
 .vs/
