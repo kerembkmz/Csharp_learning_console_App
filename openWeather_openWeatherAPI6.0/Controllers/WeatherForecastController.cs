@@ -22,18 +22,18 @@ namespace openWeather_openWeatherAPI6._0.Controllers
     public class openWeatherAPIController : ControllerBase
     {
         
-        private readonly IWeatherService _weatherService;
+        private readonly IWeatherService _cachedWeatherService;
 
 
-        public openWeatherAPIController(IWeatherService weatherService)
+        public openWeatherAPIController(IWeatherService CachedWeatherService)
         {
-            _weatherService = weatherService;
+            _cachedWeatherService = CachedWeatherService;
         }
 
         [HttpGet("{location}")]
         public async Task<IActionResult> GetWeather(string location)
         {
-            var weatherResponse = await _weatherService.GetWeather(location);
+            var weatherResponse = await _cachedWeatherService.GetWeather(location);
             if (weatherResponse != null)
             {
                 return Ok(weatherResponse);

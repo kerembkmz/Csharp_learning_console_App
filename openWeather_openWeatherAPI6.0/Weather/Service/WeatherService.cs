@@ -14,7 +14,7 @@ namespace openWeather_openWeatherAPI6._0.Weather.Service
 		{
             _httpClientFactory = httpClientFactory;
 
-            _apiKey = keys.getAPIKey(); 
+            _apiKey = Keys.getAPIKey(); 
         }
 
         public async Task<WeatherResponse> GetWeather(string location)
